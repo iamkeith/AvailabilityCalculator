@@ -9,7 +9,7 @@
 
 		<div class="container">
 
-			<h1>Availability Calculator</h1>
+			<h1 id ="test">Availability Calculator</h1>
 
 			<form>
 
@@ -19,8 +19,8 @@
 
 			<!-- Toggle Switch -->
 			<div class="toggleWrapper">
-	  			<input type="checkbox" class="dn" id="dn"/>
-	  			<label for="dn" class="toggle">
+	  			<input type="checkbox" class="dn" id="MondayFromToggle" onclick="calculateTime('Monday')"/>
+	  			<label for="MondayFromToggle" class="toggle">
 	    			<span class="toggle__handler">
 	      				<span class="crater crater--1"></span>
 	      				<span class="crater crater--2"></span>
@@ -36,14 +36,15 @@
 			</div>
 
 			<input id="MondayTo" class="time" onkeyup="calculateTime('Monday')">
-			= <span id="MondayTotal">0</span>
+			= <span id="MondayTotal">0</span> hour(s).
 			</div>
+
 
 			<div>
 			<label>Tuesday</label>
 			<input id="TuesdayFrom" class="time" onkeyup="calculateTime('Tuesday')">
 			<input id="TuesdayTo" class="time" onkeyup="calculateTime('Tuesday')">
-			= <span id="TuesdayTotal">0</span>
+			= <span id="TuesdayTotal">0</span> hours(s).
 			</div>
 
 			</form>
