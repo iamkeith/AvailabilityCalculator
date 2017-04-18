@@ -3,6 +3,7 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" href = "css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 
@@ -15,6 +16,25 @@
 			<div>
 			<label>Monday</label>
 			<input id="MondayFrom" class="time" onkeyup="calculateTime('Monday')">
+
+			<!-- Toggle Switch -->
+			<div class="toggleWrapper">
+	  			<input type="checkbox" class="dn" id="dn"/>
+	  			<label for="dn" class="toggle">
+	    			<span class="toggle__handler">
+	      				<span class="crater crater--1"></span>
+	      				<span class="crater crater--2"></span>
+	      				<span class="crater crater--3"></span>
+	   	 			</span>
+	    			<span class="star star--1"></span>
+	    			<span class="star star--2"></span>
+	    			<span class="star star--3"></span>
+	    			<span class="star star--4"></span>
+	    			<span class="star star--5"></span>
+	    			<span class="star star--6"></span>
+	  			</label>
+			</div>
+
 			<input id="MondayTo" class="time" onkeyup="calculateTime('Monday')">
 			= <span id="MondayTotal">0</span>
 			</div>
@@ -29,10 +49,11 @@
 			</form>
 
 			<p> Total Availability per week: <span id="Total"> ____ </span></p>
+
 		</div>
 
-<!-- 	 	<script src='js/jquery-3.2.1.js' type = "text/javascript"></script>
- -->		<script src = 'js/script.js' type="text/javascript"></script>
+	 	<script src='js/jquery-3.2.1.js' type = "text/javascript"></script>
+		<script src = 'js/script.js' type="text/javascript"></script>
  			<script type="text/javascript">
 //  				var time = document.getElementsByClassName('time');
 // for (var i = 0; i < time.length; i++) {
