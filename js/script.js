@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 	console.log("Ready");
 
+	insertColon();
+
 })
 
 // Calculate the hours available for the day
@@ -73,6 +75,21 @@ function calculateTime(day) {
 		available1 = round(hours1, 2);
 	}
 
+	// Apply special style if hour(s) = 0
+	if(available + available1 == 0) {
+		$('#' + day + 'Line').addClass('greyedout');
+		$('#' + day + 'Hour').text("hours");
+	}
+	else {
+		$('#' + day + 'Line').removeClass('greyedout');
+		if(available + available1 != 1) {
+			$('#' + day + 'Hour').text("hours");
+		}
+		else {
+			$('#' + day + 'Hour').text("hour");
+		}
+	}
+
 	$('#' + day + 'Total').text(available + available1);
 	calculateTotalAvailability();
 
@@ -96,4 +113,43 @@ function calculateTotalAvailability() {
 
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
+// Automatically inserts a colon when an input field is selected
+// Credit to http://codepen.io/jackocnr/pen/xuLri
+function insertColon() {
+	var input = $("input[class='time']");
+	var prefix = ":"
+
+	input.focus(function(e) {
+  		if (!$(this).val()) {
+    		$(this).val(prefix);
+  	}
+	});
+
+	input.mousedown(function(e) {
+  		// mousedown decides where the cursor goes, so if we're focusing
+  		// we must prevent this from happening
+  		if (!$(this).is(":focus") && !$(this).val()) {
+    		e.preventDefault();
+    		// but this also cancels the focus, so we must trigger that manually
+    		$(this).focus();
+    		putCursorAtEnd($(this));
+  		}
+	});
+
+	input.blur(function() {
+  		if ($(this).val() == prefix) {
+    		$(this).val("");
+  		}
+	});
+
+	// based on http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
+	var putCursorAtEnd = function(jQueryInput) {
+		var input = jQueryInput[0];
+		// works for Chrome, FF, Safari, IE9+
+		if (input.setSelectionRange) {
+			input.setSelectionRange(0, 0);
+		}
+	};
 }

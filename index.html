@@ -15,7 +15,7 @@
 
 			<div>
 			<label>Monday</label>
-			<input id="MondayFrom" class="time" onkeyup="calculateTime('Monday')">
+			<input id="MondayFrom" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
 
 			<!-- Toggle Switch -->
 			<div class="toggleWrapper">
@@ -35,25 +35,37 @@
 	  			</label>
 			</div>
 
-			<input id="MondayTo" class="time" onkeyup="calculateTime('Monday')">
+			<input id="MondayTo" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
 
-			<input id="MondayFrom1" class="time" onkeyup="calculateTime('Monday')">
-			<input id="MondayTo1" class="time" onkeyup="calculateTime('Monday')">
+			<input id="MondayFrom1" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
+			<input id="MondayTo1" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
 
-			= <span id="MondayTotal">0</span> hour(s).
+			<span id = "MondayLine" class="greyedout"> 
+			= 
+			<span id="MondayTotal">0</span> 
+			<span id = "MondayHour">hours</span>
+			</span>
 			</div>
 
 
 			<div>
 			<label>Tuesday</label>
-			<input id="TuesdayFrom" class="time" onkeyup="calculateTime('Tuesday')">
-			<input id="TuesdayTo" class="time" onkeyup="calculateTime('Tuesday')">
-			= <span id="TuesdayTotal">0</span> hours(s).
+			<input id="TuesdayFrom" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
+			<input id="TuesdayTo" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
+
+			<input id="TuesdayFrom1" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
+			<input id="TuesdayTo1" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
+
+			<span id = "TuesdayLine" class="greyedout">
+				= 
+				<span id="TuesdayTotal">0</span> 
+				<span id = "TuesdayHour">hours</span>
+			</span>
 			</div>
 
 			</form>
 
-			<p> Total Availability per week: <span id="Total"> ____ </span></p>
+			<p> Total Availability per week: <span id="Total">0</span></p>
 
 		</div>
 
