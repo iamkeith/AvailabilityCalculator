@@ -1,3 +1,5 @@
+/*  general styling  */
+
 @font-face {
   font-family: 'Poppins';
   src: url('../font/poppins-regular.ttf') format('truetype')
@@ -46,6 +48,7 @@ body {
   text-transform: uppercase;
 }
 
+/*  svg styling  */
 
 .icon {
   display: inline-block;
@@ -59,7 +62,7 @@ body {
   width: 0.8571428571428571em;
 }
 
-
+/*  calculator styling  */
 
 .calc__container {
 	/*width: 90%;*/
@@ -88,6 +91,8 @@ body {
 	line-height: 18px;
 }
 
+/*  time input styling  */
+
 .form__container {
 	padding: 35px 10px;
 }
@@ -107,6 +112,7 @@ body {
   transform: translate3d(-50%, -50%, 0);
   /*height: 200px;*/
 }
+
 .toggleWrapper input {
   position: absolute;
   left: -99em;
@@ -227,4 +233,10 @@ input:checked + .toggle .star--3 {
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
 	border-bottom: 10px solid #808080;
+}
+
+
+/*  daily hours total styling  */
+.greyedout {
+  font-size: 30px;
 }
