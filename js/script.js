@@ -28,27 +28,30 @@ function calculateTime(day) {
 		From = From.split(":");
 		To = To.split(":");
 
-		// if toggle is flipped to PM, add 12 to hours
-		if($('#' + day + 'FromToggle').is(":checked")) {
-			From[0] = parseInt(From[0]) + 12;
+		if(From[0] == "" || To[0] == "") {
+			available = 0;
 		}
-		if($('#' + day + 'ToToggle').is(":checked")) {
-			To[0] = parseInt(To[0]) + 12;
+		else {
+			// if toggle is flipped to PM, add 12 to hours
+			if($('#' + day + 'FromToggle').is(":checked")) {
+				From[0] = parseInt(From[0]) + 12;
+			}
+			if($('#' + day + 'ToToggle').is(":checked")) {
+				To[0] = parseInt(To[0]) + 12;
+			}
+
+			var fromDate = new Date(0, 0, 0, From[0], From[1] || 0, 0);
+			var toDate = new Date(0, 0, 0, To[0], To[1] || 0, 0);
+
+			// calculate diference in time
+			var diff = toDate.getTime() - fromDate.getTime();
+
+			// Make sure time difference is positive, else 0
+			if (diff < 0) diff = 0;
+
+			var hours = diff/ 1000/ 60/ 60;
+			available = round(hours, 2);
 		}
-
-		var fromDate = new Date(0, 0, 0, From[0], From[1] || 0, 0);
-		var toDate = new Date(0, 0, 0, To[0], To[1] || 0, 0);
-
-		// calculate diference in time
-		var diff = toDate.getTime() - fromDate.getTime();
-
-		// Make sure time difference is positive, else 0
-		if (diff < 0) diff = 0;
-
-		var hours = diff/ 1000/ 60/ 60;
-		available = round(hours, 2);
-		//$('#' + day + 'Total').text(round(hours, 2));
-		//calculateTotalAvailability();
 	}
 
 	// if second availability slot is filled in
@@ -57,22 +60,27 @@ function calculateTime(day) {
 		From1 = From1.split(":");
 		To1 = To1.split(":");
 
-		if($('#' + day + 'From1Toggle').is(":checked")) {
-			From1[0] = parseInt(From1[0]) + 12;
+		if(From1[0] == "" || To1[0] == "") {
+			available1 = 0;
 		}
-		if($('#' + day + 'To1Toggle').is(":checked")) {
-			To1[0] = parseInt(To1[0]) + 12;
+		else {
+			if($('#' + day + 'From1Toggle').is(":checked")) {
+				From1[0] = parseInt(From1[0]) + 12;
+			}
+			if($('#' + day + 'To1Toggle').is(":checked")) {
+				To1[0] = parseInt(To1[0]) + 12;
+			}
+
+			var from1Date = new Date(0, 0, 0, From1[0], From1[1] || 0, 0);
+			var to1Date = new Date(0, 0, 0, To1[0], To1[1] || 0, 0);
+
+			var diff1 = to1Date.getTime() - from1Date.getTime();
+
+			if(diff1 < 0) diff1 = 0;
+
+			var hours1 = diff1/ 1000 / 60 / 60;
+			available1 = round(hours1, 2);
 		}
-
-		var from1Date = new Date(0, 0, 0, From1[0], From1[1] || 0, 0);
-		var to1Date = new Date(0, 0, 0, To1[0], To1[1] || 0, 0);
-
-		var diff1 = to1Date.getTime() - from1Date.getTime();
-
-		if(diff1 < 0) diff1 = 0;
-
-		var hours1 = diff1/ 1000 / 60 / 60;
-		available1 = round(hours1, 2);
 	}
 
 	// Apply special style if hour(s) = 0
@@ -99,7 +107,7 @@ function calculateTime(day) {
 function calculateTotalAvailability() {
 
 	// Array of all dates in the week
-	var days = ["Monday", "Tuesday"];
+	var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 	var totalHours = 0;
 
 	// Loop to add up all hours
@@ -108,7 +116,7 @@ function calculateTotalAvailability() {
 		totalHours += parseFloat(text);
 	}
 
-	$('#Total').text(totalHours);
+	$('#total').text(totalHours);
 }
 
 function round(value, decimals) {
@@ -116,9 +124,10 @@ function round(value, decimals) {
 }
 
 // Automatically inserts a colon when an input field is selected
-// Credit to http://codepen.io/jackocnr/pen/xuLri
+// based on http://codepen.io/jackocnr/pen/xuLri
 function insertColon() {
-	var input = $("input[class='time']");
+
+	var input = $("input[class='time calc--center']");
 	var prefix = ":"
 
 	input.focus(function(e) {
@@ -134,7 +143,7 @@ function insertColon() {
     		e.preventDefault();
     		// but this also cancels the focus, so we must trigger that manually
     		$(this).focus();
-    		putCursorAtEnd($(this));
+    		putCursorAtFront($(this));
   		}
 	});
 
@@ -145,7 +154,7 @@ function insertColon() {
 	});
 
 	// based on http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
-	var putCursorAtEnd = function(jQueryInput) {
+	var putCursorAtFront = function(jQueryInput) {
 		var input = jQueryInput[0];
 		// works for Chrome, FF, Safari, IE9+
 		if (input.setSelectionRange) {
