@@ -5,21 +5,23 @@
 		<link rel="stylesheet" href = "css/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	</head>
-
-	<symbol id="icon-clock-o" viewBox="0 0 24 28">
-			<title>clock-o</title>
-			<path d="M14 8.5v7c0 0.281-0.219 0.5-0.5 0.5h-5c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h3.5v-5.5c0-0.281 0.219-0.5 0.5-0.5h1c0.281 0 0.5 0.219 0.5 0.5zM20.5 14c0-4.688-3.813-8.5-8.5-8.5s-8.5 3.813-8.5 8.5 3.813 8.5 8.5 8.5 8.5-3.813 8.5-8.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"></path>
-			</symbol>
 	<body>
-
+		<svg>
+			<defs>
+				<symbol id="icon-clock" viewBox="0 0 24 28">
+					<title>clock</title>
+					<path d="M14 8.5v7c0 0.281-0.219 0.5-0.5 0.5h-5c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h3.5v-5.5c0-0.281 0.219-0.5 0.5-0.5h1c0.281 0 0.5 0.219 0.5 0.5zM20.5 14c0-4.688-3.813-8.5-8.5-8.5s-8.5 3.813-8.5 8.5 3.813 8.5 8.5 8.5 8.5-3.813 8.5-8.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"></path>
+				</symbol>
+			</defs>
+		</svg>
 		<div class="page__container">
 
 			<div class="info__container--background">
 				<div class="info__container">
 					<div class="description__container">
-						<h1 class="calc__header calc--center">Calculate which car ownership package is right for you</h1>
-						<p class="calc__subheader calc--center">Enter which times you would like to have your car for each day of the week.</p>
-						<p class="calc__subheader calc--center">Once completed, check the total number of hours per week at the bottom of the calculator to see how many hours you need your vehicle and compare with our two ownership packages.</p>
+						<h1 class="calc__header">Calculate which car ownership package is right for you</h1>
+						<p class="calc__subheader">Enter which times you would like to have your car for each day of the week.</p>
+						<p class="calc__subheader">Once completed, check the total number of hours per week at the bottom of the calculator to see how many hours you need your vehicle and compare with our two ownership packages.</p>
 					</div>
 					<div class="package__container">
 						<h2>Recommended packages</h2>
@@ -73,7 +75,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="MondayToToggle" onclick="calculateTime('Monday')">
 					  			<label for="MondayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -113,6 +115,7 @@
 
 							<span id="MondayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="MondayTotal">0</span>
 							<span class="form__day--total font--bold" id="MondayHour">hours</span>
 							</span>
@@ -137,7 +140,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="TuesdayToToggle" onclick="calculateTime('Tuesday')">
 					  			<label for="TuesdayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -177,6 +180,7 @@
 
 							<span id="TuesdayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="TuesdayTotal">0</span>
 							<span class="form__day--total font--bold" id="TuesdayHour">hours</span>
 							</span>
@@ -201,7 +205,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="WednesdayToToggle" onclick="calculateTime('Wednesday')">
 					  			<label for="WednesdayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -241,6 +245,7 @@
 
 							<span id="WednesdayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="WednesdayTotal">0</span>
 							<span class="form__day--total font--bold" id="WednesdayHour">hours</span>
 							</span>
@@ -265,7 +270,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="ThursdayToToggle" onclick="calculateTime('Thursday')">
 					  			<label for="ThursdayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -305,6 +310,7 @@
 
 							<span id="ThursdayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="ThursdayTotal">0</span>
 							<span class="form__day--total font--bold" id="ThursdayHour">hours</span>
 							</span>
@@ -329,7 +335,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="FridayToToggle" onclick="calculateTime('Friday')">
 					  			<label for="FridayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -369,6 +375,7 @@
 
 							<span id="FridayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="FridayTotal">0</span>
 							<span class="form__day--total font--bold" id="FridayHour">hours</span>
 							</span>
@@ -393,7 +400,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="SaturdayToToggle" onclick="calculateTime('Saturday')">
 					  			<label for="SaturdayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -433,6 +440,7 @@
 
 							<span id="SaturdayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="SaturdayTotal">0</span>
 							<span class="form__day--total font--bold" id="SaturdayHour">hours</span>
 							</span>
@@ -457,7 +465,7 @@
 
 							<!--  AM/PM toggle button  -->
 
-							<div class="toggleWrapper">
+							<div class="toggleWrapper toggle--space">
 					  			<input type="checkbox" class="dn" id="SundayToToggle" onclick="calculateTime('Sunday')">
 					  			<label for="SundayToToggle" class="toggle">
 					    			<span class="toggle__handler"></span>
@@ -497,6 +505,7 @@
 
 							<span id="SundayLine" class="greyedout">
 							=
+							<svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
 							<span class="form__day--total font--bold" id="SundayTotal">0</span>
 							<span class="form__day--total font--bold" id="SundayHour">hours</span>
 							</span>

@@ -92,7 +92,6 @@ function calculateTime(day) {
 
 	$('#' + day + 'Total').text(available + available1);
 	calculateTotalAvailability();
-
 }
 
 // Calculate hours available for the week
