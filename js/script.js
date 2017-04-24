@@ -21,6 +21,13 @@ function calculateTime(day) {
 	var From1 = $('#' + day + 'From1')[0].value;
 	var To1 = $('#' + day + 'To1')[0].value;
 
+	// check to see if any numbers input are less than 12
+
+	if (From > 12) From = 0;
+	if (To > 12) To = 0;
+	if (From1 > 12) From1 = 0;
+	if (To1 > 12) To1 = 0;
+
 	// if both fields in first availability slot are filled in
 	if(From != 0 && To != 0) {
 
@@ -30,7 +37,12 @@ function calculateTime(day) {
 
 		// if toggle is flipped to PM, add 12 to hours
 		if($('#' + day + 'FromToggle').is(":checked")) {
-			From[0] = parseInt(From[0]) + 12;
+			if ($(From[0] = 12)) {
+				From[0] = 12;
+			}
+			else {
+				From[0] = parseInt(From[0]) + 12;
+			}
 		}
 		if($('#' + day + 'ToToggle').is(":checked")) {
 			To[0] = parseInt(To[0]) + 12;
@@ -58,7 +70,12 @@ function calculateTime(day) {
 		To1 = To1.split(":");
 
 		if($('#' + day + 'From1Toggle').is(":checked")) {
-			From1[0] = parseInt(From1[0]) + 12;
+			if ($(From1[0] = 12)) {
+				From1[0] = 12;
+			}
+			else {
+				From1[0] = parseInt(From[0]) + 12;
+			}
 		}
 		if($('#' + day + 'To1Toggle').is(":checked")) {
 			To1[0] = parseInt(To1[0]) + 12;
