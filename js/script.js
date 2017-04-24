@@ -37,16 +37,25 @@ function calculateTime(day) {
 
 		// if toggle is flipped to PM, add 12 to hours
 		if($('#' + day + 'FromToggle').is(":checked")) {
-			if ($(From[0] = 12)) {
-				From[0] = 12;
-			}
-			else {
-				From[0] = parseInt(From[0]) + 12;
-			}
+			From[0] = parseInt(From[0]) + 12;
+
+			if (From[0] === 24) From[0] = 12;
 		}
 		if($('#' + day + 'ToToggle').is(":checked")) {
 			To[0] = parseInt(To[0]) + 12;
+
+			if (To[0] === 24) To[0] = 12;
 		}
+
+		// if toggle is unchecked
+		if(!$('#' + day + 'FromToggle').is(":checked")) {
+			if (From[0] === 12) From[0] = 0;
+		}
+
+		if(!$('#' + day + 'ToToggle').is(":checked")) {
+			if (To[0] === 12) To[0] = 0;
+		}
+
 
 		var fromDate = new Date(0, 0, 0, From[0], From[1] || 0, 0);
 		var toDate = new Date(0, 0, 0, To[0], To[1] || 0, 0);
@@ -74,11 +83,16 @@ function calculateTime(day) {
 				From1[0] = 12;
 			}
 			else {
-				From1[0] = parseInt(From[0]) + 12;
+				From1[0] = parseInt(From1[0]) + 12;
 			}
 		}
 		if($('#' + day + 'To1Toggle').is(":checked")) {
-			To1[0] = parseInt(To1[0]) + 12;
+			if ($(To1[0] = 12)) {
+				To1[0] = 12;
+			}
+				else{
+					To1[0] = parseInt(To1[0]) + 12;
+			}
 		}
 
 		var from1Date = new Date(0, 0, 0, From1[0], From1[1] || 0, 0);
