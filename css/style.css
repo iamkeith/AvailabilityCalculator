@@ -43,7 +43,7 @@ input {
 }
 
 input:focus {
-	border-color: #ec7c35;
+	border-color: #ea412f;
 	outline: none;
 }
 
@@ -122,7 +122,7 @@ body {
 
 .info__container--background {
 	flex: 0 0 35%;
-	background: #e96f27;
+	background: #ea412f;
 	max-width: 450px;
 	height: 100%;
 }
@@ -135,6 +135,11 @@ body {
 	display: flex;
 	justify-content: space-between;
 	text-transform: initial;
+}
+
+.sidenote {
+	padding-top: 20px;
+	font-size: 14px;
 }
 
 /*  font styling  */
@@ -353,5 +358,5 @@ input:checked + .toggle .star--3 {
 }
 
 .form__week--total {
-	color: #e96f27;
+	color: #ea412f;
 }
