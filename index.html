@@ -12,60 +12,479 @@
 			</symbol>
 	<body>
 
-		<div class="calc__container">
+		<div class="page__container">
 
 			<h1 class="calc__header calc--center">Calculate which car ownership package is right for you!</h1>
-			<p class="calc__subheader calc--center">Enter which times you would like to have your car for each day of the week. Once completed, check the total number of hours per week at the bottom of the calculator to see how many hours you need your vehicle and compare with our two ownership packages.</p>
+			<p class="calc__subheader calc--center">Enter which times you would like to have your car for each day of the week.</p>
+			<p class="calc__subheader calc--center">Once completed, check the total number of hours per week at the bottom of the calculator to see how many hours you need your vehicle and compare with our two ownership packages.</p>
 
-			<form class="form__container">
+			<div class="calc__container">
 
-			<div>
-				<label class="form__day">Monday</label>
-				<input id="MondayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Monday')">
+				<div class="day__container font--bold">
+					<label>Monday</label>
+					<label>Tuesday</label>
+					<label>Wednesday</label>
+					<label>Thursday</label>
+					<label>Friday</label>
+					<label>Saturday</label>
+					<label>Sunday</label>
 
-			<!-- Toggle Switch -->
-			<div class="toggleWrapper">
-	  			<input type="checkbox" class="dn" id="MondayFromToggle" onclick="calculateTime('Monday')"/>
-	  			<label for="MondayFromToggle" class="toggle">
-	    			<span class="toggle__handler">
-	   	 			</span>
-	    			<span class="star star--1"></span>
-	    			<span class="star star--2"></span>
-	    			<span class="star star--3"></span>
-	  			</label>
+				</div>
+
+				<form class="form__container">
+					<div class="monday">
+						<input id="MondayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Monday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="MondayFromToggle" onclick="calculateTime('Monday')">
+				  			<label for="MondayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="MondayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Monday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="MondayToToggle" onclick="calculateTime('Monday')">
+				  			<label for="MondayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="MondayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Monday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="MondayFrom1Toggle" onclick="calculateTime('Monday')">
+				  			<label for="MondayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="MondayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Monday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="MondayTo1Toggle" onclick="calculateTime('Monday')">
+				  			<label for="MondayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="MondayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="MondayTotal">0</span>
+						<span class="form__day--total font--bold" id="MondayHour">hours</span>
+						</span>
+					</div>
+
+					<div class="tuesday">
+						<input id="TuesdayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Tuesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="TuesdayFromToggle" onclick="calculateTime('Tuesday')">
+				  			<label for="TuesdayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="TuesdayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Tuesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="TuesdayToToggle" onclick="calculateTime('Tuesday')">
+				  			<label for="TuesdayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="TuesdayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Tuesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="TuesdayFrom1Toggle" onclick="calculateTime('Tuesday')">
+				  			<label for="TuesdayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="TuesdayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Tuesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="TuesdayTo1Toggle" onclick="calculateTime('Tuesday')">
+				  			<label for="TuesdayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="TuesdayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="TuesdayTotal">0</span>
+						<span class="form__day--total font--bold" id="TuesdayHour">hours</span>
+						</span>
+					</div>
+
+					<div class="wednesday">
+						<input id="WednesdayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Wednesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="WednesdayFromToggle" onclick="calculateTime('Wednesday')">
+				  			<label for="WednesdayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="WednesdayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Wednesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="WednesdayToToggle" onclick="calculateTime('Wednesday')">
+				  			<label for="WednesdayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="WednesdayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Wednesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="WednesdayFrom1Toggle" onclick="calculateTime('Wednesday')">
+				  			<label for="WednesdayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="WednesdayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Wednesday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="WednesdayTo1Toggle" onclick="calculateTime('Wednesday')">
+				  			<label for="WednesdayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="WednesdayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="WednesdayTotal">0</span>
+						<span class="form__day--total font--bold" id="WednesdayHour">hours</span>
+						</span>
+					</div>
+
+					<div class="thursday">
+						<input id="ThursdayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Thursday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="ThursdayFromToggle" onclick="calculateTime('Thursday')">
+				  			<label for="ThursdayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="ThursdayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Thursday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="ThursdayToToggle" onclick="calculateTime('Thursday')">
+				  			<label for="ThursdayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="ThursdayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Thursday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="ThursdayFrom1Toggle" onclick="calculateTime('Thursday')">
+				  			<label for="ThursdayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="ThursdayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Thursday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="ThursdayTo1Toggle" onclick="calculateTime('Thursday')">
+				  			<label for="ThursdayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="ThursdayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="ThursdayTotal">0</span>
+						<span class="form__day--total font--bold" id="ThursdayHour">hours</span>
+						</span>
+					</div>
+
+					<div class="friday">
+						<input id="FridayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Friday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="FridayFromToggle" onclick="calculateTime('Friday')">
+				  			<label for="FridayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="FridayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Friday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="FridayToToggle" onclick="calculateTime('Friday')">
+				  			<label for="FridayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="FridayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Friday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="FridayFrom1Toggle" onclick="calculateTime('Friday')">
+				  			<label for="FridayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="FridayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Friday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="FridayTo1Toggle" onclick="calculateTime('Friday')">
+				  			<label for="FridayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="FridayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="FridayTotal">0</span>
+						<span class="form__day--total font--bold" id="FridayHour">hours</span>
+						</span>
+					</div>
+
+					<div class="saturday">
+						<input id="SaturdayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Saturday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SaturdayFromToggle" onclick="calculateTime('Saturday')">
+				  			<label for="SaturdayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="SaturdayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Saturday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SaturdayToToggle" onclick="calculateTime('Saturday')">
+				  			<label for="SaturdayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="SaturdayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Saturday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SaturdayFrom1Toggle" onclick="calculateTime('Saturday')">
+				  			<label for="SaturdayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="SaturdayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Saturday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SaturdayTo1Toggle" onclick="calculateTime('Saturday')">
+				  			<label for="SaturdayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="SaturdayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="SaturdayTotal">0</span>
+						<span class="form__day--total font--bold" id="SaturdayHour">hours</span>
+						</span>
+					</div>
+
+					<div>
+						<input id="SundayFrom" class="time calc--center" maxlength="5" onkeyup="calculateTime('Sunday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SundayFromToggle" onclick="calculateTime('Sunday')">
+				  			<label for="SundayFromToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="SundayTo" class="time calc--center" maxlength="5" onkeyup="calculateTime('Sunday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SundayToToggle" onclick="calculateTime('Sunday')">
+				  			<label for="SundayToToggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="SundayFrom1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Sunday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SundayFrom1Toggle" onclick="calculateTime('Sunday')">
+				  			<label for="SundayFrom1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<input id="SundayTo1" class="time calc--center" maxlength="5" onkeyup="calculateTime('Sunday')">
+
+						<!--  AM/PM toggle button  -->
+
+						<div class="toggleWrapper">
+				  			<input type="checkbox" class="dn" id="SundayTo1Toggle" onclick="calculateTime('Sunday')">
+				  			<label for="SundayTo1Toggle" class="toggle">
+				    			<span class="toggle__handler"></span>
+				    			<span class="star star--1"></span>
+				    			<span class="star star--2"></span>
+				    			<span class="star star--3"></span>
+				  			</label>
+						</div>
+
+						<span id="SundayLine" class="greyedout">
+						=
+						<span class="form__day--total font--bold" id="SundayTotal">0</span>
+						<span class="form__day--total font--bold" id="SundayHour">hours</span>
+						</span>
+					</div>
+
+				</form>
 			</div>
-
-			<input id="MondayTo" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
-
-			<input id="MondayFrom1" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
-			<input id="MondayTo1" class="time" maxlength="5" onkeyup="calculateTime('Monday')">
-
-			<span id="MondayLine" class="greyedout">
-			= <span id="MondayTotal">0</span>
-			<span id="MondayHour">hours</span>
-			</span>
+			<div class="calc__total">
+				<p> Total availability per week: <span class="form__week--total"> 0 </span></p>
 			</div>
-
-
-			<div>
-			<label class="form__day">Tuesday</label>
-			<input id="TuesdayFrom" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
-			<input id="TuesdayTo" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
-
-			<input id="TuesdayFrom1" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
-			<input id="TuesdayTo1" class="time" maxlength="5" onkeyup="calculateTime('Tuesday')">
-
-			<span id="TuesdayLine" class="greyedout">
-			=
-			<span id="TuesdayTotal">0</span>
-			<span id="TuesdayHour">hours</span>
-			</span>
-			</div>
-
-			</form>
-
-			<p> Total availability per week: <span id="total"> 0 </span></p>
-
 		</div>
 
 	 	<script src='js/jquery-3.2.1.js' type = "text/javascript"></script>

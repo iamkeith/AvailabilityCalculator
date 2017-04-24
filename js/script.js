@@ -99,7 +99,7 @@ function calculateTime(day) {
 function calculateTotalAvailability() {
 
 	// Array of all dates in the week
-	var days = ["Monday", "Tuesday"];
+	var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 	var totalHours = 0;
 
 	// Loop to add up all hours
@@ -108,7 +108,7 @@ function calculateTotalAvailability() {
 		totalHours += parseFloat(text);
 	}
 
-	$('#Total').text(totalHours);
+	$('.form__week--total').text(totalHours);
 }
 
 function round(value, decimals) {
