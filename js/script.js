@@ -148,7 +148,7 @@ function round(value, decimals) {
 // Automatically inserts a colon when an input field is selected
 // Credit to http://codepen.io/jackocnr/pen/xuLri
 function insertColon() {
-	var input = $("input[class='time']");
+	var input = $("input[class='time calc--center']");
 	var prefix = ":"
 
 	input.focus(function(e) {
